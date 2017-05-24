@@ -3,15 +3,23 @@ import React from 'react';
 import Header from './Includes/Header'
 import Sidebar from './Includes/Sidebar'
 
+import riotApi from '../../riot'
+
 class Admin extends React.Component {
 
 	generateChampionList(e) {
 		e.preventDefault();
 
-		fetch('/api/championlist', {
+		const apiUrl = 'https://na1.api.riotgames.com/lol/static-data/v3/champions?champListData=all&dataById=true&api_key=' + riotApi.key;
+
+		fetch(apiUrl, {
 			method: 'get'
 		}).then(function(response) {
-
+			return response.json();
+		}).then(function(j){
+			for (var key in j.data) {
+				console.log(j.data[key].name);
+			}
 		}).catch(function(err) {
 			// Error :(
 		});
