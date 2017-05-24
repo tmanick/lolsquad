@@ -6,19 +6,34 @@ import Sidebar from './Includes/Sidebar'
 import { riotApi } from '../../riot'
 
 class ChampionList extends React.Component {
+	constructor() {
+		super();
 
-	showAllChamps() {
+		this.state = {
+			champions: []
+		}
+	}
+
+	componentDidMount() {
+		this.performChampionsFetch();
+	}
+
+	performChampionsFetch() {
 		const fetchUrl = riotApi.allChampsUrl + riotApi.key;
 
-		fetch(fetchUrl, {
-			method: 'get'
-		}).then(response => response.json()).then(function(j){
-			Object
-				.keys(j.data)
-				.map(key => console.log(j.data[key]));
+		fetch(fetchUrl)
+		.then(response => response.json()).then(function(j){
+			console.log(j.data);
+			this.setState({
+				champions : j.data
+			})
 		}).catch(function(err) {
 			console.log(err);
 		});
+	}
+
+	test() {
+		console.log(riotApi);
 	}
 
 	render() {
@@ -31,7 +46,7 @@ class ChampionList extends React.Component {
 							<Sidebar />
 						</div>
 						<div className="col-xs-9 content">
-							{ this.showAllChamps() }
+							
 						</div>
 					</div>
 				</div>
