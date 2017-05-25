@@ -22,7 +22,7 @@ class ChampionList extends React.Component {
 	}
 
 	performChampionsFetch() {
-		const fetchUrl = riotApi.allChampsUrl + riotApi.key;
+		const fetchUrl = `https://na1.api.riotgames.com/lol/static-data/v3/champions/?champListData=all&dataById=true&api_key=${riotApi.key}`;
 
 		Axios
 			.get(fetchUrl)

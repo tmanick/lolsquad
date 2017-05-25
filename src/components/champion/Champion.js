@@ -1,8 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
 
-import ChampionBucket from '../partials/ChampionBucket'
-
 import { riotApi } from '../../riot'
 
 class ChampionList extends React.Component {
@@ -22,7 +20,7 @@ class ChampionList extends React.Component {
 	}
 
 	performChampionsFetch() {
-		const fetchUrl = riotApi.allChampsUrl + riotApi.key;
+		const fetchUrl = `https://na1.api.riotgames.com/lol/static-data/v3/champions/${this.params.championId}?champListData=all&dataById=true&api_key=${riotApi.key}`;
 
 		Axios
 			.get(fetchUrl)
@@ -39,6 +37,7 @@ class ChampionList extends React.Component {
 	}
 
 	render() {
+		console.log(this);
 		return (
 			<div className="content">
 				Single
