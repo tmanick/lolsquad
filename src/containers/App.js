@@ -13,9 +13,10 @@ const App = () => (
 		<DashboardLayout>
 			<Switch>
 				<Route exact path="/" component={Home}/>
-				<Route exact path="/admin/" component={Admin}/>
-				<Route exact path="/champion/" component={ChampionList}/>
-				<Route exact path="/champion/:championId" component={Champion}/>
+				<Route path="/admin/" component={Admin}/>
+				<Route path="/champion/" component={ChampionList}>
+					<Route path="/test" component={Champion}/>
+				</Route>
 				<Route component={PageNotFound} />
 			</Switch>
 		</DashboardLayout>

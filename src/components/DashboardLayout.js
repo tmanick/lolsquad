@@ -7,7 +7,7 @@ import Sidebar from './partials/Sidebar'
 class DashboardLayout extends React.Component {
 	render() {
 		return (
-			<div className="pageWrapper home">
+			<div className="pageWrapper">
 				<Header />
 				<div className="container">
 					<div className="row">

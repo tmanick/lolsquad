@@ -7,7 +7,7 @@ class ChampionList extends React.Component {
 	constructor() {
 		super();
 
-		this.performChampionsFetch = this.performChampionsFetch.bind(this);
+		this.performChampionFetch = this.performChampionFetch.bind(this);
 
 		this.state = {
 			version: {},
@@ -16,10 +16,10 @@ class ChampionList extends React.Component {
 	}
 
 	componentDidMount() {
-		this.performChampionsFetch();
+		//this.performChampionFetch();
 	}
 
-	performChampionsFetch() {
+	performChampionFetch() {
 		const fetchUrl = `https://na1.api.riotgames.com/lol/static-data/v3/champions/${this.params.championId}?champListData=all&dataById=true&api_key=${riotApi.key}`;
 
 		Axios
@@ -37,7 +37,7 @@ class ChampionList extends React.Component {
 	}
 
 	render() {
-		console.log(this);
+		console.log(this.props);
 		return (
 			<div className="content">
 				Single
