@@ -1,10 +1,9 @@
 import React from 'react';
 
-import Header from './Includes/Header'
-import Sidebar from './Includes/Sidebar'
+import Header from './partials/Header'
+import Sidebar from './partials/Sidebar'
 
-class Champion extends React.Component {
-
+class Home extends React.Component {
 	render() {
 		return (
 			<div className="pageWrapper home">
@@ -15,7 +14,7 @@ class Champion extends React.Component {
 							<Sidebar />
 						</div>
 						<div className="col-xs-9">
-							<a href="/champion/">Back to List</a>
+							404!
 						</div>
 					</div>
 				</div>
@@ -24,4 +23,4 @@ class Champion extends React.Component {
 	}
 }
 
-export default Champion;
+export default Home;

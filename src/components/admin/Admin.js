@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Header from './Includes/Header'
-import Sidebar from './Includes/Sidebar'
+import Header from '../partials/Header'
+import Sidebar from '../partials/Sidebar'
 
 class Admin extends React.Component {
 
