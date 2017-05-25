@@ -1,9 +1,6 @@
 import React from 'react';
 
-import Header from './partials/Header'
-import Sidebar from './partials/Sidebar'
-
-class Home extends React.Component {
+class PageNotFound extends React.Component {
 	render() {
 		return (
 			<div className="not-found">
@@ -13,4 +10,4 @@ class Home extends React.Component {
 	}
 }
 
-export default Home;
+export default PageNotFound;
